@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kesetimbangan Kimia – SMA Negeri 5 Palembang</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0A2A66;--blue:#1b5fd8;--sky:#e8f1ff;--line:#c9dcfa;--ink:#10213f;--ok:#0a7a3d;--bad:#b3261e;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;font:16px/1.65 Poppins,system-ui,"Segoe UI",sans-serif;color:var(--ink);background:#fff}
+header.top{background:var(--navy);color:#fff;padding:10px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+header.top b{font-size:14px;margin-right:auto}
+nav.m{display:flex;gap:6px;overflow-x:auto;max-width:100%}
+nav.m button{flex:none;border:0;background:rgba(255,255,255,.14);color:#fff;border-radius:99px;padding:6px 12px;font:600 12px Poppins,sans-serif;cursor:pointer}
+nav.m button.on,nav.m button:hover{background:#fff;color:var(--navy)}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #ffb703;outline-offset:2px}
+.hero{background:linear-gradient(135deg,#0A2A66 0%,#1b5fd8 70%);color:#fff;padding:48px 20px 56px;text-align:center}
+.hero h1{font-size:clamp(30px,7vw,54px);line-height:1.15;margin:8px 0}
+.hero p{max-width:620px;margin:6px auto;color:#e6efff}
+.eq{font-size:clamp(22px,5vw,34px);letter-spacing:2px;background:#fff;color:var(--navy);display:inline-block;padding:6px 20px;border-radius:14px;margin:12px 0;animation:sw 3s ease-in-out infinite alternate}
+@keyframes sw{from{transform:translateX(-8px)}to{transform:translateX(8px)}}
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;max-width:960px;margin:-30px auto 30px;padding:0 16px}
+.menu button{background:#fff;border:2px solid var(--line);border-radius:16px;padding:16px;text-align:left;cursor:pointer;font:600 15px Poppins,sans-serif;color:var(--navy);box-shadow:0 6px 18px rgba(10,42,102,.12);transition:.2s}
+.menu button:hover{transform:translateY(-4px);border-color:var(--blue)}
+.menu small{display:block;font-weight:400;color:#38517f}
+.menu span{font-size:24px;display:block}
+main{max-width:860px;margin:0 auto;padding:20px 16px 60px}
+section{display:none}section.on{display:block;animation:fi .45s ease}
+@keyframes fi{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+h2{color:var(--navy);font-size:26px;margin:.2em 0 .6em}
+h3{color:var(--blue);margin:1em 0 .3em}
+.card{background:var(--sky);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin:12px 0}
+.card.w{background:#fff}
+.btn{background:var(--blue);color:#fff;border:0;border-radius:12px;padding:10px 18px;font:600 14px Poppins,sans-serif;cursor:pointer}
+.btn:hover{background:var(--navy)}.btn.o{background:#fff;color:var(--blue);border:2px solid var(--blue)}.btn:disabled{opacity:.4;cursor:default}
+.nv{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:16px}
+.dots{display:flex;gap:6px}.dots i{width:10px;height:10px;border-radius:50%;background:var(--line)}.dots i.on{background:var(--blue)}
+table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid var(--line);padding:6px 8px;text-align:center}th{background:var(--navy);color:#fff}
+.sc{overflow-x:auto}
+.q{border:2px solid var(--line);border-radius:16px;padding:16px;margin:14px 0;background:#fff}
+.q .lv{display:inline-block;background:var(--navy);color:#fff;border-radius:99px;font-size:12px;padding:2px 12px}
+.q .st{background:var(--sky);border-left:5px solid var(--blue);padding:8px 12px;border-radius:8px;margin:10px 0;font-size:14.5px}
+.q label{display:block;padding:7px 10px;border-radius:10px;cursor:pointer}.q label:hover{background:var(--sky)}
+.q select{padding:5px;border-radius:8px;border:2px solid var(--line);font:inherit;margin-left:6px}
+.fb{margin-top:10px;padding:10px 14px;border-radius:12px;font-size:14.5px}
+.fb.ok{background:#e3f6ea;color:#064d27}.fb.no{background:#fdeceb;color:#7a1510}
+.fld{display:grid;gap:10px;grid-template-columns:1fr 1fr}.fld input{padding:10px;border:2px solid var(--line);border-radius:10px;font:inherit;width:100%}
+@media(max-width:560px){.fld{grid-template-columns:1fr}}
+.bar{height:26px;border-radius:8px;color:#fff;font-size:13px;padding:2px 10px;transition:width .15s;white-space:nowrap}
+textarea{width:100%;min-height:120px;font:12px monospace;border:2px solid var(--line);border-radius:10px;padding:8px}
+ul.r li{margin:6px 0}
+.hud{display:flex;gap:8px;flex-wrap:wrap;font-weight:600;font-size:14px}.hud span{background:var(--sky);border-radius:99px;padding:3px 12px;color:var(--navy)}
+.tm{height:8px;background:var(--line);border-radius:9px;overflow:hidden}.tm i{display:block;height:100%;background:var(--blue);width:100%}
+.go{display:block;width:100%;text-align:left;margin:8px 0;background:#fff;color:var(--navy);border:2px solid var(--blue);border-radius:12px;padding:12px;font:600 15px Poppins,sans-serif;cursor:pointer;transition:.15s}.go:hover:not(:disabled){background:var(--sky);transform:translateX(4px)}.go.ok{background:#e3f6ea;border-color:var(--ok)}.go.no{background:#fdeceb;border-color:var(--bad)}
+@keyframes pop{from{transform:scale(.6);opacity:0}to{transform:none;opacity:1}}.pop{animation:pop .4s}
+footer{text-align:center;background:var(--navy);color:#fff;padding:14px;font-size:13px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<header class="top"><b>SMA Negeri 5 Palembang · Kimia XI</b><nav class="m" id="nav"></nav></header>
+
+<div id="home">
+<div class="hero"><p>Media Pembelajaran Interaktif · Kimia SMA Kelas XI</p>
+<h1>Kesetimbangan Kimia</h1><div class="eq">N<sub>2</sub> + 3H<sub>2</sub> ⇌ 2NH<sub>3</sub></div>
+<p>Pelajari mengapa reaksi bisa tampak “berhenti” padahal partikel terus bergerak.</p>
+<p><small>Penyusun: Novitalia Ablinda Sari, S.T., M.Pd · SMA Negeri 5 Palembang</small></p></div>
+<div class="menu" id="menu"></div></div>
+
+<main id="app" style="display:none">
+<section id="tujuan"><h2>🎯 Tujuan Pembelajaran</h2><div class="card"><p>Setelah mempelajari materi ini, kamu mampu:</p><ul class="r">
+<li>Membedakan reaksi reversibel dan irreversibel serta menjelaskan kesetimbangan dinamis.</li>
+<li>Menuliskan persamaan tetapan kesetimbangan (Kc dan Kp) dan menghitung nilainya.</li>
+<li>Menggunakan Qc untuk memprediksi arah reaksi.</li>
+<li>Menjelaskan pengaruh konsentrasi, tekanan/volume, suhu, dan katalis dengan asas Le Chatelier.</li>
+<li>Menganalisis kondisi optimum proses industri (Haber-Bosch dan Kontak).</li></ul></div>
+<button class="btn" onclick="go('video')">Lanjut ke video pengantar ▶</button></section>
+
+<section id="video"><h2>🎬 Video Pengantar Materi</h2><div class="card w"><p style="margin-top:0">Tonton video berikut sebelum mempelajari materi.</p><video controls playsinline preload="metadata" style="width:100%;border-radius:12px;background:#0A2A66" src="video-pengantar.mp4"></video></div>
+<button class="btn" onclick="go('awal')">Lanjut ke asesmen awal ▶</button></section>
+
+<section id="awal"><h2>🧭 Asesmen Awal</h2><div class="card"><p style="margin-top:0">Jawab 15 pertanyaan (8 tentang bekal materi, 7 tentang profil dan kesiapan belajar). Ini bukan penilaian, jawab sesuai keadaanmu agar pembelajaran sesuai kebutuhanmu.</p><div class="fld"><input id="an" placeholder="Nama lengkap"><input id="ak" placeholder="Kelas (contoh: XI-3)"></div></div><div id="aq"></div><p><button class="btn" id="ab">Lihat pemetaan</button> <span id="ae" style="color:var(--bad)"></span></p><div id="ar"></div></section>
+
+<section id="materi"><h2>📘 Materi Pembelajaran</h2><div id="mt"></div>
+<div class="nv"><button class="btn o" id="pv">◀ Sebelumnya</button><div class="dots" id="dt"></div><button class="btn" id="nx">Berikutnya ▶</button></div></section>
+
+<section id="sim"><h2>🧪 Simulasi · Animasi · Video</h2>
+<div class="card w"><h3>Animasi: Pergeseran N<sub>2</sub>O<sub>4</sub> ⇌ 2NO<sub>2</sub></h3>
+<p style="font-size:14px">N<sub>2</sub>O<sub>4</sub> tak berwarna, NO<sub>2</sub> cokelat. Reaksi ke kanan bersifat endoterm. Beri “gangguan” lalu amati arah pergeserannya.</p>
+<div id="b1" class="bar" style="background:#6b7a99">N₂O₄</div><div id="b2" class="bar" style="background:#a0522d;margin-top:6px">NO₂</div>
+<p id="inf" style="font-weight:600;color:var(--navy)"></p>
+<div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" onclick="dis('a')">+ N₂O₄</button><button class="btn" onclick="dis('b')">+ NO₂</button><button class="btn" onclick="dis('hot')">🔥 Naikkan suhu</button><button class="btn" onclick="dis('cold')">❄ Turunkan suhu</button><button class="btn" onclick="dis('v')">Perkecil volume</button><button class="btn o" onclick="rst()">Ulangi</button></div></div>
+<div class="card w"><h3>Simulasi PhET Colorado</h3><p style="font-size:14px">Buka tautan, lalu bereksperimen mengubah jumlah zat dan amati grafik konsentrasi.</p>
+<a class="btn" style="display:inline-block;text-decoration:none" target="_blank" rel="noopener" href="https://phet.colorado.edu/en/simulations/reversible-reactions">Reversible Reactions</a>
+<a class="btn o" style="display:inline-block;text-decoration:none" target="_blank" rel="noopener" href="https://phet.colorado.edu/en/simulations/reactions-and-rates">Reactions &amp; Rates</a></div>
+<div class="card w"><h3>Video pembelajaran</h3><p style="font-size:14px">Cari video di YouTube (buka di tab baru).</p>
+<a class="btn o" style="display:inline-block;text-decoration:none" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=kesetimbangan+kimia+SMA+asas+Le+Chatelier">Kesetimbangan kimia &amp; Le Chatelier</a>
+<a class="btn o" style="display:inline-block;text-decoration:none" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=proses+Haber+Bosch+amonia+animasi">Proses Haber-Bosch</a></div></section>
+
+<section id='game'><h2>🎮 Game Edukasi</h2><div class='card'><h3 style='margin-top:0'>Misi Operator Kesetimbangan</h3><p>Kamu operator pabrik kimia. Setiap misi memberi gangguan pada sistem setimbang. Tentukan ke mana kesetimbangan bergeser! Ada 12 misi, 4 level, dan 3 nyawa ❤. Jawaban cepat dan beruntun memberi bonus poin.</p><label style='display:block;font-size:14px'><input type='checkbox' id='nt'> Mode santai (tanpa batas waktu)</label><button class='btn' style='margin-top:10px' id='gs'>▶ Mulai misi</button></div><div id='gm'></div></section>
+
+<section id="latihan"><h2>✏️ Latihan Soal</h2><p>Tingkat kesulitan naik mengikuti taksonomi SOLO. Tekan “Periksa” pada tiap soal.</p><div id="lq"></div></section>
+
+<section id="asesmen"><h2>📝 Asesmen Sumatif</h2>
+<div class="card" id="idc"><p>Isi identitas (diketik) lalu mulai. Jawaban akan direkap dalam format CSV.</p>
+<div class="fld"><input id="nm" placeholder="Nama lengkap"><input id="kl" placeholder="Kelas (contoh: XI-3)"></div><p><button class="btn" id="st">Mulai asesmen</button> <span id="er" style="color:var(--bad)"></span></p></div>
+<div id="sq"></div><div id="rs"></div></section>
+
+<section id='bank'><h2>🗂️ Bank Soal</h2><div class='card w'><p style='margin-top:0'>Kumpulan soal latihan tambahan tersedia di Google Drive. Buka folder, pilih berkas, lalu kerjakan untuk memperdalam pemahamanmu.</p><a class='btn' style='display:inline-block;text-decoration:none' target='_blank' rel='noopener' href='https://drive.google.com/drive/folders/1UZCEYj-x7cV5NCZ6JwC7l5IG3TvdvxEd?usp=drive_link'>📂 Buka Bank Soal</a></div></section>
+
+<section id='tka'><h2>🎬 Pembahasan Soal TKA</h2><p>Tonton pembahasan soal TKA berikut (dibuka di YouTube pada tab baru).</p><div class='card w'><p style='margin:0 0 10px'><a class='btn' style='display:block;text-decoration:none;text-align:center' target='_blank' rel='noopener' href='https://youtu.be/Mw87WXZ9UPU?si=PCjyenGs5nDW4ynI'>▶ Pembahasan TKA 1</a></p><p style='margin:0 0 10px'><a class='btn' style='display:block;text-decoration:none;text-align:center' target='_blank' rel='noopener' href='https://youtu.be/jSYOeHIoROQ?si=SGhsobGJ2tJfwSsn'>▶ Pembahasan TKA 2</a></p><p style='margin:0 0 10px'><a class='btn' style='display:block;text-decoration:none;text-align:center' target='_blank' rel='noopener' href='https://youtu.be/GbFWpbQ1FIY?si=DluVelZNqbvoPnIt'>▶ Pembahasan TKA 3</a></p><p style='margin:0'><a class='btn' style='display:block;text-decoration:none;text-align:center' target='_blank' rel='noopener' href='https://youtu.be/BSLUJftYnTo?si=24K52IorKejRta2f'>▶ Pembahasan TKA 4</a></p></div></section>
+
+<section id="rangkuman"><h2>📌 Rangkuman</h2><div class="card"><ul class="r">
+<li>Reaksi reversibel dapat berlangsung dua arah; kesetimbangan dinamis tercapai bila laju maju = laju balik pada sistem tertutup.</li>
+<li>Konsentrasi pada keadaan setimbang tetap, bukan sama.</li>
+<li>Kc = [produk]<sup>koefisien</sup> / [pereaksi]<sup>koefisien</sup>; padatan dan cairan murni tidak ditulis. Kp memakai tekanan parsial gas.</li>
+<li>Qc &lt; Kc → ke kanan; Qc &gt; Kc → ke kiri; Qc = Kc → setimbang.</li>
+<li>Le Chatelier: sistem melawan gangguan. Hanya suhu yang mengubah nilai K; katalis hanya mempercepat tercapainya setimbang.</li>
+<li>Industri memilih kondisi kompromi antara rendemen, laju, dan biaya.</li></ul></div></section>
+
+<section id="refleksi"><h2>💭 Refleksi</h2><div class="card"><p>Jawab untuk dirimu sendiri:</p><ul class="r">
+<li>Bagian mana yang paling mudah kamu pahami? Mengapa?</li>
+<li>Bagian mana yang masih membingungkan, dan apa langkahmu untuk memahaminya?</li>
+<li>Di mana kamu melihat kesetimbangan dalam kehidupan sehari-hari?</li>
+<li>Bagaimana hasil asesmenmu, dan apa yang akan kamu perbaiki?</li></ul>
+<textarea placeholder="Tuliskan refleksimu di sini…"></textarea></div></section>
+</main>
+<footer>© SMA Negeri 5 Palembang · Kimia Kelas XI · Kesetimbangan Kimia</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const S=[['tujuan','🎯','Tujuan Pembelajaran','Apa yang akan kamu capai'],['video','🎬','Video Pengantar Materi','Tonton sebelum belajar'],['awal','🧭','Asesmen Awal','15 soal, pemetaan, umpan balik'],['materi','📘','Materi Pembelajaran','5 materi esensial'],['sim','🧪','Simulasi-Animasi-Video','PhET, animasi, video'],['game','🎮','Game Edukasi','Bermain sambil belajar'],['latihan','✏️','Latihan Soal','Umpan balik langsung'],['asesmen','📝','Asesmen Sumatif','15 soal + rekap CSV'],['bank','🗂️','Bank Soal','Soal tambahan di Drive'],['tka','🎬','Pembahasan Soal TKA','4 video pembahasan'],['rangkuman','📌','Rangkuman','Poin kunci'],['refleksi','💭','Refleksi','Renungkan belajarmu']];
+$('menu').innerHTML=S.map(s=>`<button onclick="go('${s[0]}')"><span>${s[1]}</span>${s[2]}<small>${s[3]}</small></button>`).join('');
+$('nav').innerHTML='<button onclick="goHome()">🏠 Beranda</button>'+S.map(s=>`<button data-k="${s[0]}" onclick="go('${s[0]}')">${s[2]}</button>`).join('');
+function goHome(){$('home').style.display='';$('app').style.display='none';document.querySelectorAll('#nav button').forEach(b=>b.classList.remove('on'));scrollTo(0,0)}
+function go(k){$('home').style.display='none';$('app').style.display='';document.querySelectorAll('main section').forEach(s=>s.classList.toggle('on',s.id==k));document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.k==k));scrollTo(0,0)}
+/* MATERI */
+const M=[
+['1. Reaksi Reversibel &amp; Kesetimbangan Dinamis',`<p><b>Reaksi irreversibel</b> berlangsung satu arah (contoh: kertas terbakar). <b>Reaksi reversibel</b> dapat berlangsung dua arah, ditandai tanda ⇌.</p>
+<div class="card w"><p style="text-align:center;font-size:20px">N<sub>2</sub>O<sub>4</sub>(g) ⇌ 2NO<sub>2</sub>(g)<br><small>tak berwarna &nbsp;&nbsp;&nbsp;&nbsp; cokelat</small></p></div>
+<h3>Kesetimbangan dinamis</h3><p>Pada sistem <b>tertutup</b>, laju reaksi maju makin kecil dan laju reaksi balik makin besar hingga <b>keduanya sama</b>. Akibatnya konsentrasi zat tetap (warna tidak berubah), padahal reaksi tetap berlangsung di tingkat partikel.</p>
+<div class="card"><b>Ingat:</b> tetap ≠ sama. Konsentrasi pada keadaan setimbang konstan, tidak harus sama besar.</div>`],
+['2. Tetapan Kesetimbangan (Kc dan Kp)',`<p>Untuk reaksi <b>aA + bB ⇌ cC + dD</b>:</p>
+<div class="card w" style="text-align:center;font-size:18px">K<sub>c</sub> = [C]<sup>c</sup>[D]<sup>d</sup> / [A]<sup>a</sup>[B]<sup>b</sup></div>
+<ul class="r"><li>Zat padat dan cairan murni <b>tidak</b> ditulis. Contoh CaCO<sub>3</sub>(s) ⇌ CaO(s) + CO<sub>2</sub>(g): K<sub>c</sub> = [CO<sub>2</sub>].</li>
+<li>Kp memakai tekanan parsial gas: Kp = P<sub>NH3</sub><sup>2</sup> / (P<sub>N2</sub>·P<sub>H2</sub><sup>3</sup>).</li>
+<li>Reaksi dibalik → K′ = 1/K. Koefisien dikali n → K′ = K<sup>n</sup>.</li>
+<li>K hanya berubah oleh <b>suhu</b>.</li></ul>
+<h3>Contoh hitung</h3><p>2SO<sub>2</sub> + O<sub>2</sub> ⇌ 2SO<sub>3</sub>; setimbang: [SO<sub>2</sub>]=0,2; [O<sub>2</sub>]=0,1; [SO<sub>3</sub>]=0,4 M.<br>Kc = (0,4)² / ((0,2)²(0,1)) = 0,16/0,004 = <b>40</b></p>`],
+['3. Kuosien Reaksi (Qc) &amp; Arah Reaksi',`<p>Qc dihitung dengan rumus yang sama seperti Kc, tetapi memakai konsentrasi <b>pada saat tertentu</b>.</p>
+<div class="sc"><table><tr><th>Perbandingan</th><th>Arti</th></tr><tr><td>Qc &lt; Kc</td><td>Produk kurang → reaksi bergeser ke <b>kanan</b></td></tr><tr><td>Qc = Kc</td><td>Sudah <b>setimbang</b></td></tr><tr><td>Qc &gt; Kc</td><td>Produk berlebih → reaksi bergeser ke <b>kiri</b></td></tr></table></div>
+<div class="card w"><b>Contoh:</b> 2A ⇌ B, Kc = 10. Saat [A]=0,1 M dan [B]=0,2 M → Qc = 0,2/0,01 = 20 &gt; 10, maka reaksi bergeser ke kiri.</div>`],
+['4. Pergeseran Kesetimbangan (Le Chatelier)',`<p><b>Asas Le Chatelier:</b> bila sistem setimbang diganggu, sistem bergeser untuk mengurangi gangguan.</p>
+<div class="sc"><table><tr><th>Gangguan</th><th>Arah pergeseran</th></tr>
+<tr><td>Tambah zat</td><td>Menjauhi zat yang ditambah</td></tr><tr><td>Kurangi zat</td><td>Menuju zat yang dikurangi</td></tr>
+<tr><td>Tekanan naik / volume kecil</td><td>Ke sisi jumlah mol gas lebih kecil</td></tr><tr><td>Tekanan turun / volume besar</td><td>Ke sisi jumlah mol gas lebih besar</td></tr>
+<tr><td>Suhu naik</td><td>Ke arah endoterm (nilai K berubah)</td></tr><tr><td>Suhu turun</td><td>Ke arah eksoterm (nilai K berubah)</td></tr>
+<tr><td>Katalis</td><td>Tidak menggeser; hanya mempercepat tercapai setimbang</td></tr></table></div>
+<div class="card">Jika jumlah mol gas kiri = kanan, perubahan volume tidak menggeser kesetimbangan. Coba animasinya di menu <b>Simulasi</b>.</div>`],
+['5. Kesetimbangan dalam Industri',`<h3>Proses Haber-Bosch</h3><p>N<sub>2</sub> + 3H<sub>2</sub> ⇌ 2NH<sub>3</sub> &nbsp;ΔH = −92 kJ (eksoterm)</p>
+<ul class="r"><li><b>Tekanan tinggi (±200–300 atm):</b> 4 mol gas → 2 mol gas, sehingga bergeser ke NH<sub>3</sub>.</li>
+<li><b>Suhu sedang (±450 °C):</b> suhu rendah menaikkan rendemen tetapi laju terlalu lambat; maka dipilih kompromi.</li>
+<li><b>Katalis Fe:</b> mempercepat reaksi tanpa mengubah rendemen setimbang.</li>
+<li><b>NH<sub>3</sub> dicairkan dan dikeluarkan</b> agar kesetimbangan terus bergeser ke kanan.</li></ul>
+<h3>Proses Kontak</h3><p>2SO<sub>2</sub> + O<sub>2</sub> ⇌ 2SO<sub>3</sub> (eksoterm), katalis V<sub>2</sub>O<sub>5</sub>, ±450 °C, untuk membuat asam sulfat.</p>
+<div class="card"><b>Pesan kunci:</b> kondisi optimum = keseimbangan antara <i>rendemen</i>, <i>laju</i>, dan <i>biaya</i>.</div>`]];
+let mi=0;
+function rm(){$('mt').innerHTML=`<div class="card w" style="animation:fi .4s"><h3 style="margin-top:0">${M[mi][0]}</h3>${M[mi][1]}</div>`;$('dt').innerHTML=M.map((_,i)=>`<i class="${i==mi?'on':''}"></i>`).join('');$('pv').disabled=mi==0;$('nx').disabled=mi==M.length-1}
+$('pv').onclick=()=>{mi--;rm()};$('nx').onclick=()=>{mi++;rm()};rm();
+/* ANIMASI */
+let A,B,K,tA,tB,n0=1;
+function eqB(n,k){return(-k/2+Math.sqrt(k*k/4+4*k*n))/2}
+function rst(){K=.4;B=eqB(1,K);A=1-B/2;tA=A;tB=B;draw('Sistem setimbang. Beri gangguan!')}
+function draw(t){$('b1').style.width=Math.min(100,A*60)+'%';$('b2').style.width=Math.min(100,B*60)+'%';$('b1').textContent='N₂O₄ '+A.toFixed(2);$('b2').textContent='NO₂ '+B.toFixed(2);if(t)$('inf').textContent=t}
+function dis(x){let t='';
+if(x=='a'){A+=.5;t='Ditambah N₂O₄ → bergeser ke kanan (NO₂ bertambah).'}
+if(x=='b'){B+=.5;t='Ditambah NO₂ → bergeser ke kiri (N₂O₄ bertambah).'}
+if(x=='hot'){K*=2;t='Suhu naik → bergeser ke arah endoterm (kanan); nilai K membesar.'}
+if(x=='cold'){K/=2;t='Suhu turun → bergeser ke arah eksoterm (kiri); nilai K mengecil.'}
+if(x=='v'){A*=2;B*=2;t='Volume diperkecil → bergeser ke sisi mol gas lebih kecil (kiri).'}
+const n=A+B/2;tB=eqB(n,K);tA=n-tB/2;draw(t);let f=0;const iv=setInterval(()=>{A+=(tA-A)*.08;B+=(tB-B)*.08;draw();if(++f>70){clearInterval(iv);A=tA;B=tB;draw()}},40)}
+rst();
+/* SOAL */
+const LB=['Benar','Salah'];
+const P=[
+{lv:'SOLO 1 · Unistruktural',t:'s',q:'Ciri utama keadaan setimbang dinamis adalah …',o:['Reaksi berhenti','Laju reaksi maju sama dengan laju reaksi balik','Konsentrasi pereaksi sama dengan produk','Zat pereaksi habis','Massa zat berkurang terus'],a:1,e:'Pada kesetimbangan dinamis reaksi tetap berlangsung, laju maju = laju balik sehingga konsentrasi tetap.'},
+{lv:'SOLO 2 · Multistruktural',t:'k',q:'Pilih SEMUA pernyataan yang benar tentang kesetimbangan dinamis.',o:['Laju maju = laju balik','Konsentrasi semua zat sama','Konsentrasi tiap zat tetap','Reaksi telah berhenti','Terjadi pada sistem tertutup'],a:[0,2,4],e:'Konsentrasi tetap (bukan sama) dan reaksi tidak berhenti; kesetimbangan dinamis butuh sistem tertutup.'},
+{lv:'SOLO 2 · Multistruktural',t:'c',q:'Tentukan benar/salah untuk reaksi CaCO₃(s) ⇌ CaO(s) + CO₂(g).',o:['Kc = [CO₂]','Kc = [CaO][CO₂]/[CaCO₃]','Kc bergantung pada suhu'],a:[1,0,1],l:LB,e:'Padatan tidak ditulis dalam Kc sehingga Kc = [CO₂]; Kc hanya dipengaruhi suhu.'},
+{lv:'SOLO 3 · Relasional',t:'s',q:'Pada kesetimbangan 2SO₂ + O₂ ⇌ 2SO₃ diperoleh [SO₂]=0,2 M; [O₂]=0,1 M; [SO₃]=0,4 M. Nilai Kc adalah …',o:['4','8','20','40','80'],a:3,e:'Kc = (0,4)²/((0,2)²·0,1) = 0,16/0,004 = 40.'},
+{lv:'SOLO 3 · Relasional',t:'k',q:'Pada N₂ + 3H₂ ⇌ 2NH₃ (ΔH = −92 kJ), tindakan yang menggeser kesetimbangan ke kanan adalah …',o:['Tekanan dinaikkan','Suhu dinaikkan','Menambah N₂','Menambah katalis','Mengeluarkan NH₃'],a:[0,2,4],e:'Ke kanan: tekanan naik (4 mol→2 mol), tambah pereaksi, kurangi produk. Suhu naik menggeser ke kiri (endoterm); katalis tidak menggeser.'},
+{lv:'SOLO 4 · Abstrak diperluas',t:'s',q:'Mengapa industri Haber memakai suhu ±450 °C padahal reaksi pembentukan NH₃ eksoterm?',o:['Agar Kc membesar','Kompromi antara laju reaksi yang cukup dan rendemen yang masih layak','Agar reaksi irreversibel','Agar jumlah mol gas bertambah','Agar katalis tidak diperlukan'],a:1,e:'Suhu rendah memperbesar rendemen tetapi sangat lambat. 450 °C dengan katalis dan tekanan tinggi adalah kompromi.'}];
+const U=[
+/*L1*/
+{lv:'L1',t:'s',st:'Tabung tertutup berisi N₂O₄ (tak berwarna) ⇌ 2NO₂ (cokelat). Warna cokelat makin pekat lalu tidak berubah lagi.',q:'Warna yang tetap menandakan …',o:['Reaksi berhenti','Laju reaksi maju = laju reaksi balik','N₂O₄ habis','NO₂ tidak terbentuk lagi','[N₂O₄] = [NO₂]'],a:1,e:'Warna tetap berarti konsentrasi tetap; reaksi masih berlangsung dengan laju maju = balik.'},
+{lv:'L1',t:'s',st:'Fenomena: air dan es dalam termos tertutup pada 0 °C. Es mencair sambil air membeku dengan jumlah sama.',q:'Sistem ini merupakan contoh kesetimbangan …',o:['Statis','Dinamis','Irreversibel','Tidak mungkin terjadi','Hanya pada gas'],a:1,e:'Proses terus terjadi dua arah dengan laju sama → kesetimbangan dinamis.'},
+{lv:'L1',t:'s',st:'Reaksi: H₂(g) + I₂(g) ⇌ 2HI(g)',q:'Persamaan Kc yang tepat adalah …',o:['[H₂][I₂]/[HI]','[HI]/[H₂][I₂]','[HI]²/([H₂][I₂])','[H₂][I₂]/[HI]²','2[HI]/([H₂][I₂])'],a:2,e:'Produk di pembilang, pereaksi di penyebut, pangkat = koefisien.'},
+{lv:'L1',t:'k',st:'Sebuah wadah tertutup berisi sistem gas pada keadaan setimbang.',q:'Pilih pernyataan yang benar.',o:['Konsentrasi zat tetap','Reaksi berhenti total','Laju maju sama dengan laju balik','Terjadi pada sistem terbuka','Terjadi pada reaksi reversibel'],a:[0,2,4],e:'Kesetimbangan dinamis terjadi pada reaksi reversibel dalam sistem tertutup.'},
+{lv:'L1',t:'c',st:'Reaksi: CaCO₃(s) ⇌ CaO(s) + CO₂(g)',q:'Kategorikan pernyataan berikut.',o:['Kc = [CO₂]','Kc = [CaO][CO₂]/[CaCO₃]','Jumlah padatan tidak memengaruhi nilai Kc'],a:[1,0,1],l:['Tepat','Tidak tepat'],e:'Padatan tidak masuk dalam Kc, sehingga Kc = [CO₂] dan tidak bergantung pada jumlah padatan.'},
+/*L2*/
+{lv:'L2',t:'s',st:'Data setimbang 2NO + O₂ ⇌ 2NO₂: [NO]=0,1 M; [O₂]=0,2 M; [NO₂]=0,2 M.',q:'Nilai Kc adalah …',o:['2','5','10','20','40'],a:3,e:'Kc = (0,2)²/((0,1)²·0,2) = 0,04/0,002 = 20.'},
+{lv:'L2',t:'s',st:'Dalam wadah 1 L dicampur 1 mol H₂ dan 1 mol I₂. Pada setimbang terbentuk 1,6 mol HI (H₂ + I₂ ⇌ 2HI).',q:'Nilai Kc adalah …',o:['16','32','48','64','80'],a:3,e:'HI = 1,6 mol → H₂ dan I₂ bereaksi 0,8 mol; sisa 0,2 mol tiap gas. Kc = 1,6²/(0,2·0,2) = 2,56/0,04 = 64.'},
+{lv:'L2',t:'k',st:'PCl₅(g) ⇌ PCl₃(g) + Cl₂(g) ΔH = +93 kJ',q:'Pilih tindakan yang memperbanyak Cl₂.',o:['Menaikkan suhu','Memperkecil volume','Menambah PCl₅','Menambah katalis','Memperbesar volume'],a:[0,2,4],e:'Endoterm: suhu naik → kanan. Tambah pereaksi → kanan. Volume diperbesar → sisi mol gas lebih besar (kanan, 2 mol).'},
+{lv:'L2',t:'c',st:'Data (ilustrasi) 2SO₂ + O₂ ⇌ 2SO₃. Nilai Kc: 500 K = 2,5×10¹⁰; 700 K = 3,0×10⁴; 900 K = 4,0×10¹.',q:'Kategorikan pernyataan berikut.',o:['Reaksi ke kanan bersifat eksoterm','Kenaikan suhu menggeser kesetimbangan ke kanan','Rendemen SO₃ paling besar pada 500 K'],a:[0,1,0],l:LB,e:'Kc turun saat suhu naik → eksoterm; kenaikan suhu menggeser ke kiri; Kc terbesar pada 500 K.'},
+{lv:'L2',t:'s',st:'Untuk reaksi A ⇌ B nilai Kc = 0,5 pada suhu tertentu.',q:'Nilai Kc untuk reaksi 2B ⇌ 2A pada suhu yang sama adalah …',o:['0,25','0,5','1','2','4'],a:4,e:'Dibalik → 1/0,5 = 2; dikali 2 → 2² = 4.'},
+/*L3*/
+{lv:'L3',t:'s',st:'Studi kasus: sebuah pabrik amonia memilih suhu 100 °C karena Kc sangat besar. Namun produksi amonia per hari sangat sedikit.',q:'Evaluasi yang paling tepat adalah …',o:['Kc besar selalu berarti reaksi cepat','Suhu rendah memperbesar Kc tetapi laju reaksi sangat lambat sehingga tidak ekonomis','Suhu rendah menurunkan tekanan gas','Katalis tidak berguna di suhu rendah','Amonia mudah terurai pada suhu rendah'],a:1,e:'Kc menunjukkan posisi setimbang, bukan kecepatan. Suhu rendah memperlambat tercapainya setimbang.'},
+{lv:'L3',t:'k',st:'Pada sistem setimbang N₂O₄ ⇌ 2NO₂, menit ke-10 ditambahkan NO₂. [NO₂] naik mendadak, kemudian turun perlahan sedangkan [N₂O₄] naik hingga tercapai setimbang baru.',q:'Pilih pernyataan yang benar.',o:['Reaksi bergeser ke kiri','Sesaat setelah penambahan, laju balik lebih besar dari laju maju','Nilai Kc berubah','[N₂O₄] setimbang baru lebih besar dari semula','Reaksi berhenti sesaat'],a:[0,1,3],e:'Penambahan produk → Qc > Kc → ke kiri. Kc tetap (suhu tetap); [N₂O₄] akhir lebih besar dari semula.'},
+{lv:'L3',t:'c',st:'Pengasaman laut: CO₂(g) + H₂O(l) ⇌ H⁺(aq) + HCO₃⁻(aq). Kadar CO₂ atmosfer meningkat dan larut ke laut.',q:'Kategorikan pernyataan berikut.',o:['Kesetimbangan bergeser ke kanan','pH air laut cenderung turun','Nilai Kc berubah karena CO₂ bertambah'],a:[0,0,1],l:['Tepat','Tidak tepat'],e:'Tambah CO₂ → ke kanan → [H⁺] naik → pH turun. Kc hanya berubah oleh suhu.'},
+{lv:'L3',t:'s',st:'Data (ilustrasi) rendemen NH₃ pada 450 °C: 100 atm = 25 %; 200 atm = 36 %; 300 atm = 45 %.',q:'Simpulan yang paling tepat adalah …',o:['Tekanan tidak berpengaruh','Tekanan tinggi menaikkan rendemen karena 4 mol gas pereaksi menjadi 2 mol gas produk','Tekanan tinggi menurunkan Kc','Tekanan tinggi mengubah ΔH reaksi','Tekanan tinggi memperkecil laju reaksi'],a:1,e:'Kenaikan tekanan menggeser ke sisi mol gas lebih kecil (NH₃), sehingga rendemen naik.'},
+{lv:'L3',t:'s',st:'Reaksi 2A(g) ⇌ B(g) memiliki Kc = 10. Pada suatu saat [A] = 0,1 M dan [B] = 0,2 M.',q:'Kesimpulan yang tepat adalah …',o:['Sudah setimbang','Qc = 2, reaksi ke kanan','Qc = 20, reaksi ke kiri','Qc = 20, reaksi ke kanan','Qc = 2, reaksi ke kiri'],a:2,e:'Qc = 0,2/(0,1)² = 20 > Kc → reaksi bergeser ke kiri.'}];
+const ABC='ABCDE';
+function qh(q,i,pre){let h=`<div class="q" id="${pre}${i}"><span class="lv">${pre=='p'?'Soal '+(i+1)+' · ':'No. '+(i+1)+' · '}${q.lv}</span>`;
+if(q.st)h+=`<div class="st"><b>Stimulus:</b> ${q.st}</div>`;h+=`<p><b>${q.q}</b></p>`;
+if(q.t=='c')q.o.forEach((o,j)=>h+=`<p>${o}<select data-j="${j}"><option value="">– pilih –</option><option value="0">${q.l?q.l[0]:LB[0]}</option><option value="1">${q.l?q.l[1]:LB[1]}</option></select></p>`);
+else q.o.forEach((o,j)=>h+=`<label><input type="${q.t=='s'?'radio':'checkbox'}" name="${pre}${i}" value="${j}"> ${ABC[j]}. ${o}</label>`);
+return h+`<button class="btn" onclick="chk('${pre}',${i})">Periksa</button><div class="fb" style="display:none"></div></div>`}
+const OK=['Hebat! Jawabanmu benar. Pertahankan semangatmu! 🌟','Luar biasa, tepat sekali! Kamu semakin paham. 🎉','Keren! Konsepmu sudah kuat. 👏'];
+const NO=['Jangan menyerah, kesalahan adalah bagian dari belajar. Ayo pahami lagi! 💪','Belum tepat, tetapi kamu pasti bisa. Baca pembahasannya lalu coba lagi! 🌱','Tetap semangat! Setiap kesalahan membuatmu lebih dekat dengan paham. 🚀'];
+const rec={};let done=0;
+function ans(q,box){if(q.t=='c'){const s=[...box.querySelectorAll('select')];if(s.some(x=>x.value===''))return null;return s.map(x=>+x.value)}
+const c=[...box.querySelectorAll('input:checked')].map(x=>+x.value);return c.length?c:null}
+function chk(pre,i){const q=(pre=='p'?P:U)[i],box=$(pre+i),a=ans(q,box),fb=box.querySelector('.fb');
+if(!a){fb.style.display='block';fb.className='fb no';fb.textContent='Jawab dulu semua bagian soal ini.';return}
+let ok;if(q.t=='s')ok=a[0]==q.a;else if(q.t=='k')ok=a.length==q.a.length&&q.a.every(x=>a.includes(x));else ok=a.every((v,j)=>v==q.a[j]);
+const r=Math.floor(Math.random()*3);fb.style.display='block';fb.className='fb '+(ok?'ok':'no');
+fb.innerHTML=(pre=='u'&&ok?'<span style="font-size:28px">👍</span> ':'')+(ok?OK[r]:NO[r]+'<br><b>Pembahasan:</b> '+q.e);
+if(pre=='u'){box.querySelectorAll('input,select,button').forEach(x=>x.disabled=true);
+const js=q.t=='c'?a.map((v,j)=>q.o[j].slice(0,25)+'='+(q.l||LB)[v]).join(' | '):a.map(x=>ABC[x]).join(',');
+if(!rec[i]){done++;}rec[i]={no:i+1,lv:q.lv,j:js,ok:ok?1:0};if(done==U.length)fin()}}
+$('lq').innerHTML=P.map((q,i)=>qh(q,i,'p')).join('');
+let who;
+$('st').onclick=()=>{const n=$('nm').value.trim(),k=$('kl').value.trim();if(!n||!k){$('er').textContent='Nama dan kelas wajib diisi.';return}
+who=[n,k];$('idc').innerHTML=`<p>👤 <b>${n}</b> · Kelas <b>${k}</b></p><p style="font-size:14px">Kerjakan 15 soal (L1–L3). Setiap soal diperiksa satu per satu.</p>`;$('sq').innerHTML=U.map((q,i)=>qh(q,i,'u')).join('')};
+const csv=s=>'"'+String(s).replace(/"/g,'""')+'"';
+function fin(){const rows=[['Nama','Kelas','No','Level','Jawaban','Hasil(1=benar)']];Object.values(rec).forEach(r=>rows.push([who[0],who[1],r.no,r.lv,r.j,r.ok]));
+const sc=Object.values(rec).reduce((a,r)=>a+r.ok,0),txt=rows.map(r=>r.map(csv).join(',')).join('\n')+'\n'+['Skor',sc+'/'+U.length,Math.round(sc/U.length*100)].map(csv).join(',');
+$('rs').innerHTML=`<div class="card"><h3>Skor: ${sc}/${U.length} (${Math.round(sc/U.length*100)})</h3><p>${sc>=12?'Luar biasa! 🎉':sc>=8?'Bagus, terus tingkatkan! 💪':'Tetap semangat, pelajari lagi pembahasannya! 🌱'}</p>
+<button class="btn" id="dl">⬇ Unduh CSV</button> <button class="btn o" id="cp">Salin CSV</button><p style="font-size:13px">Jika unduhan tidak berjalan, salin teks CSV di bawah lalu tempel ke file .csv.</p><textarea readonly id="ct">${txt.replace(/</g,'&lt;')}</textarea></div>`;
+$('dl').onclick=()=>{try{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+txt],{type:'text/csv'}));a.download=`asesmen_${who[0].replace(/\s+/g,'_')}_${who[1]}.csv`;a.click()}catch(e){}};
+$('cp').onclick=()=>{$('ct').select();try{navigator.clipboard.writeText(txt)}catch(e){document.execCommand('copy')}};$('rs').scrollIntoView({behavior:'smooth'})}
+/* ASESMEN AWAL */
+const AK=[
+{s:0,q:'Reaksi kimia yang dapat berlangsung ke dua arah (produk dapat kembali menjadi pereaksi) disebut reaksi …',o:['Irreversibel','Reversibel','Eksoterm','Netralisasi','Redoks'],a:1,e:'Reaksi dua arah disebut reversibel dan ditulis dengan tanda ⇌.'},
+{s:0,q:'Air dan es berada dalam termos tertutup pada 0 °C. Es mencair dan air membeku dengan jumlah yang sama. Pernyataan yang paling tepat adalah …',o:['Proses berhenti','Proses tetap berlangsung dua arah dengan laju sama','Hanya es yang berubah','Semua es berubah menjadi air','Tidak ada perubahan apa pun di tingkat partikel'],a:1,e:'Proses tetap terjadi dua arah dengan laju sama; ini gambaran kesetimbangan dinamis.'},
+{s:1,q:'Sebanyak 0,5 mol zat dilarutkan hingga volume larutan 2 L. Konsentrasinya adalah …',o:['0,25 M','0,5 M','1 M','2 M','4 M'],a:0,e:'M = n/V = 0,5/2 = 0,25 M.'},
+{s:1,q:'Pada reaksi 2H₂ + O₂ → 2H₂O, perbandingan mol H₂ : O₂ yang bereaksi adalah …',o:['1 : 1','1 : 2','2 : 1','2 : 2','3 : 1'],a:2,e:'Perbandingan mol sama dengan perbandingan koefisien, yaitu 2 : 1.'},
+{s:2,q:'Katalis berfungsi untuk …',o:['Menaikkan hasil reaksi setimbang','Mempercepat reaksi tanpa habis bereaksi','Menurunkan suhu reaksi','Menambah jumlah pereaksi','Mengubah ΔH reaksi'],a:1,e:'Katalis mempercepat reaksi lewat jalur berenergi aktivasi lebih rendah dan tidak habis bereaksi.'},
+{s:2,q:'Reaksi eksoterm adalah reaksi yang …',o:['Menyerap kalor, ΔH positif','Melepas kalor, ΔH negatif','Tidak melibatkan kalor','Selalu berlangsung lambat','Hanya terjadi pada gas'],a:1,e:'Eksoterm melepas kalor ke lingkungan sehingga ΔH negatif.'},
+{s:3,q:'Untuk reaksi 2A + B ⇌ C, persamaan tetapan kesetimbangan yang tepat adalah …',o:['[C]/([A][B])','[C]/([A]²[B])','[A]²[B]/[C]','2[C]/([A][B])','[C]²/([A][B])'],a:1,e:'Produk di pembilang, pereaksi di penyebut, dipangkatkan koefisien: Kc = [C]/([A]²[B]).'},
+{s:3,q:'Pada sistem setimbang A ⇌ B ditambahkan zat A. Dugaanmu, kesetimbangan akan …',o:['Bergeser ke arah B','Bergeser ke arah A','Tidak berubah','Berhenti','Berbalik arah selamanya'],a:0,e:'Sistem melawan gangguan dengan mengurangi A, yaitu bergeser ke arah B.'}];
+const ASP=['Konsep reaksi reversibel','Prasyarat hitungan (mol dan konsentrasi)','Prasyarat energi dan laju reaksi','Gambaran awal kesetimbangan'];
+const SO=[['Melihat gambar, diagram, atau video','V'],['Mendengar penjelasan atau berdiskusi','A'],['Mencoba langsung atau memakai simulasi','K'],['Membaca dan membuat catatan sendiri','B']];
+const SO2=[['Menonton animasi dan melihat grafik','V'],['Bertanya dan bercerita dengan teman','A'],['Bereksperimen dan mengutak-atik alat','K'],['Merangkum dan mengerjakan soal tertulis','B']];
+const AP=[
+{t:'s',q:'Saya paling mudah memahami materi baru jika …',o:SO},
+{t:'s',q:'Kegiatan belajar kimia yang paling saya sukai adalah …',o:SO2},
+{t:'r',q:'Perangkat dan internet yang saya miliki untuk belajar …',o:['Sering sulit diakses','Terbatas (kuota atau perangkat bergantian)','Cukup baik','Sangat memadai']},
+{t:'r',q:'Ketertarikan saya pada pelajaran kimia …',o:['Kurang tertarik','Biasa saja','Tertarik','Sangat tertarik']},
+{t:'r',q:'Keyakinan saya dapat memahami kesetimbangan kimia …',o:['Sangat ragu','Ragu-ragu','Cukup yakin','Sangat yakin']},
+{t:'r',q:'Kebiasaan belajar mandiri saya di rumah …',o:['Hampir tidak pernah','Hanya saat ada ujian','Beberapa kali seminggu','Hampir setiap hari']},
+{t:'h',q:'Kesulitan terbesar saya dalam belajar kimia adalah …',o:[['Perhitungan dan rumus','H'],['Memahami konsep yang abstrak','C'],['Mengingat istilah dan lambang','I'],['Menjaga fokus dan semangat','M']]}];
+function arad(q,n,i){return q.o.map((o,j)=>`<label><input type="radio" name="a${n}" value="${j}"> ${i?'ABCDE'[j]+'. ':''}${Array.isArray(o)?o[0]:o}</label>`).join('')}
+$('aq').innerHTML='<h3>Bagian A · Bekal materi</h3>'+AK.map((q,i)=>`<div class="q"><span class="lv">A${i+1}</span><p><b>${q.q}</b></p>${arad(q,i,1)}</div>`).join('')+'<h3>Bagian B · Profil dan kesiapan belajar</h3>'+AP.map((q,i)=>`<div class="q"><span class="lv">B${i+1}</span><p><b>${q.q}</b></p>${arad(q,8+i,0)}</div>`).join('');
+const STY={V:['Visual','Mulai dari Video Pengantar dan animasi di menu Simulasi; perhatikan diagram dan tabel pada materi.'],A:['Auditori','Tonton video sambil menjelaskan ulang dengan kata-katamu sendiri dan diskusikan dengan teman.'],K:['Kinestetik','Mulai dari animasi dan simulasi PhET: ubah variabelnya, amati hasilnya, baru baca materi.'],B:['Baca-tulis','Baca materi per slide, lalu tulis rangkuman sendiri dan kerjakan latihan soal.']};
+const DIF={H:'Untuk perhitungan: pelajari contoh hitung pada Materi 2 dan 3, tulis langkahnya satu per satu, dan ulangi konsep mol dan molaritas.',C:'Untuk konsep abstrak: gunakan animasi dan simulasi untuk melihat partikel dan grafik sebelum membaca penjelasan.',I:'Untuk istilah dan lambang: buat kartu istilah (reversibel, setimbang dinamis, Kc, Qc) dan baca rangkuman secara berkala.',M:'Untuk fokus: belajar 15–20 menit per sesi, selesaikan satu materi per sesi, dan beri penghargaan pada dirimu.'};
+$('ab').onclick=()=>{const n=$('an').value.trim(),k=$('ak').value.trim(),E=$('ae');
+if(!n||!k){E.textContent='Nama dan kelas wajib diisi.';return}
+const v=[];for(let i=0;i<15;i++){const c=document.querySelector(`input[name=a${i}]:checked`);if(!c){E.textContent='Jawab semua pertanyaan (belum: nomor '+(i<8?'A'+(i+1):'B'+(i-7))+').';return}v.push(+c.value)}
+E.textContent='';
+const asp=[0,0,0,0],wr=[];let ks=0;AK.forEach((q,i)=>{if(v[i]==q.a){ks++;asp[q.s]++}else wr.push(`<li><b>A${i+1}</b>: jawaban tepat <i>${q.o[q.a]}</i>. ${q.e}</li>`)});
+const sc={V:0,A:0,K:0,B:0};sc[AP[0].o[v[8]][1]]++;sc[AP[1].o[v[9]][1]]++;
+const mx=Math.max(...Object.values(sc)),dom=Object.keys(sc).filter(x=>sc[x]==mx);
+const rd=v[10]+v[11]+v[12]+v[13]+4,df=AP[6].o[v[14]][1];
+const kl=ks<=3?['Perlu penguatan prasyarat','Mulailah bertahap: tonton video pengantar, pelajari Materi 1 dan 2 dengan teliti, dan ulangi konsep mol serta molaritas. Jangan ragu bertanya kepada guru.']:ks<=6?['Berkembang','Kamu sudah memiliki bekal dasar. Perkuat bagian yang masih keliru (lihat daftar di bawah), lalu lanjutkan materi sesuai urutan.']:['Siap lanjut','Bekalmu kuat. Pelajari materi dengan cepat, lalu tantang dirimu dengan latihan SOLO tingkat tinggi dan studi kasus asesmen sumatif.'];
+const rl=rd<=8?['Perlu dukungan','Atur jadwal belajar pendek yang rutin, pilih waktu dengan akses internet terbaik, dan minta bantuan guru atau teman belajar.']:rd<=12?['Cukup siap','Pertahankan kebiasaan belajarmu dan tingkatkan keteraturan, misalnya belajar sedikit setiap hari.']:['Sangat siap','Kesiapanmu tinggi. Jadilah teman diskusi bagi temanmu dan coba kerjakan latihan tanpa melihat pembahasan terlebih dahulu.'];
+const col=['#b3261e','#9a5b00','#0a7a3d'],lb=['Perlu penguatan','Berkembang','Kuat'];
+const bars=ASP.map((a,i)=>{const s=asp[i];return `<div style="margin:8px 0"><div style="font-size:14px">${a}</div><div class="bar" style="width:${Math.max(30,s*50)}%;background:${col[s]}">${lb[s]} (${s}/2)</div></div>`}).join('');
+window.AW={n,k,ks,rd,dom};$('nm').value=n;$('kl').value=k;
+$('ar').innerHTML=`<div class="card w" style="animation:fi .5s"><h3 style="margin-top:0">Pemetaan untuk ${n} (Kelas ${k})</h3>
+<div class="card"><b>1. Bekal materi: ${kl[0]}</b> (${ks}/8 benar)<br>${kl[1]}</div>
+${bars}
+<div class="card"><b>2. Kesiapan belajar: ${rl[0]}</b> (skor ${rd}/16)<br>${rl[1]}</div>
+<div class="card"><b>3. Gaya belajar dominan: ${dom.map(x=>STY[x][0]).join(' + ')}</b><br>${dom.map(x=>STY[x][1]).join('<br>')}</div>
+<div class="card"><b>4. Tantanganmu</b><br>${DIF[df]}</div>
+${wr.length?'<h3>Konsep yang perlu ditinjau</h3><ul class="r">'+wr.join('')+'</ul>':'<p>👍 Semua pertanyaan bekal materi terjawab tepat. Hebat!</p>'}
+<p><b>Semangat belajar, ${n}!</b> Setiap langkah kecil membawamu semakin paham. 🌟</p>
+<button class="btn" onclick="go('materi')">Mulai Materi Pembelajaran ▶</button></div>`;
+$('ar').scrollIntoView({behavior:'smooth'})};
+/* GAME */
+const LV=['Teknisi Pemula','Operator Suhu','Insinyur Tekanan','Analis Qc'];
+const OPT=['➡ Ke kanan (produk bertambah)','⬅ Ke kiri (pereaksi bertambah)','⏸ Tidak bergeser'];
+const HB='N₂ + 3H₂ ⇌ 2NH₃ (ΔH = −92 kJ)',ND='N₂O₄ (tak berwarna) ⇌ 2NO₂ (cokelat) ΔH = +57 kJ';
+const GR=[
+{lv:1,sc:['f','Reaktor'],c:HB,s:'Operator menambahkan lebih banyak N₂ ke dalam reaktor.',a:0,e:'Sistem mengurangi gangguan: N₂ yang bertambah dipakai, sehingga bergeser ke kanan (NH₃ bertambah).'},
+{lv:1,sc:['f','NH₃ cair'],c:HB,s:'NH₃ didinginkan, dicairkan, dan dikeluarkan terus-menerus dari reaktor.',a:0,e:'Produk dikurangi, sehingga sistem membentuk produk lagi: bergeser ke kanan. Inilah alasan NH₃ dikeluarkan di industri.'},
+{lv:1,sc:['o'],c:'CO₂(g) + H₂O(l) ⇌ H⁺(aq) + HCO₃⁻(aq)',s:'Kadar CO₂ di atmosfer naik dan lebih banyak CO₂ larut ke laut.',a:0,e:'Pereaksi (CO₂) bertambah, sehingga bergeser ke kanan. [H⁺] naik dan pH laut turun (pengasaman laut).'},
+{lv:2,sc:['t','ice'],c:ND,s:'Tabung berisi gas setimbang dicelupkan ke dalam air es.',a:1,e:'Suhu turun, sistem bergeser ke arah eksoterm, yaitu ke kiri (N₂O₄). Warna cokelat memudar.'},
+{lv:2,sc:['t','hot'],c:ND,s:'Tabung berisi gas setimbang dipanaskan.',a:0,e:'Suhu naik, sistem bergeser ke arah endoterm, yaitu ke kanan (NO₂). Warna cokelat makin pekat.'},
+{lv:2,sc:['f','450 °C → 600 °C'],c:HB,s:'Suhu reaktor dinaikkan dari 450 °C menjadi 600 °C.',a:1,e:'Reaksi ke kanan eksoterm. Suhu naik menggeser ke kiri (endoterm), sehingga rendemen NH₃ turun.'},
+{lv:3,sc:['p','Volume diperkecil'],c:ND,s:'Piston ditekan sehingga volume gas diperkecil (suhu tetap).',a:1,e:'Volume mengecil berarti tekanan naik, sehingga bergeser ke sisi mol gas lebih kecil: 1 mol (N₂O₄), yaitu ke kiri.'},
+{lv:3,sc:['f','200 → 300 atm'],c:HB,s:'Tekanan dalam reaktor dinaikkan dari 200 atm menjadi 300 atm.',a:0,e:'Pereaksi 4 mol gas, produk 2 mol gas. Tekanan naik menggeser ke sisi mol lebih kecil, yaitu kanan.'},
+{lv:3,sc:['p','Volume diperkecil'],c:'H₂(g) + I₂(g) ⇌ 2HI(g)',s:'Volume wadah diperkecil pada suhu tetap.',a:2,e:'Jumlah mol gas kiri (2) sama dengan kanan (2), sehingga perubahan volume dan tekanan tidak menggeser kesetimbangan.'},
+{lv:3,sc:['f','Katalis Fe'],c:HB,s:'Ke dalam reaktor ditambahkan katalis besi (Fe).',a:2,e:'Katalis mempercepat laju maju dan balik sama besar. Ia tidak menggeser kesetimbangan, hanya mempercepat tercapainya setimbang.'},
+{lv:4,sc:['b',['2A ⇌ B     Kc = 10','[A] = 0,1 M','[B] = 0,2 M','Qc = ?']],c:'Reaksi 2A(g) ⇌ B(g), Kc = 10',s:'Pada suatu saat [A] = 0,1 M dan [B] = 0,2 M. Hitung Qc dan bandingkan dengan Kc.',a:1,e:'Qc = 0,2/(0,1)² = 20, lebih besar dari Kc (10). Produk berlebih, sehingga bergeser ke kiri.'},
+{lv:4,sc:['b',['A ⇌ B     Kc = 2','[A] = 1 M','[B] = 0,5 M','Qc = ?']],c:'Reaksi A(g) ⇌ B(g), Kc = 2',s:'Pada suatu saat [A] = 1 M dan [B] = 0,5 M. Hitung Qc dan bandingkan dengan Kc.',a:0,e:'Qc = 0,5/1 = 0,5, lebih kecil dari Kc (2). Produk masih kurang, sehingga bergeser ke kanan.'}];
+function scn(s){const t=s[0],x=s[1];let b='';
+if(t=='f')b=`<rect x='110' y='28' width='80' height='86' rx='14' fill='#e8f1ff'/><rect x='20' y='52' width='90' height='10' fill='#7fb0ff'/><rect x='190' y='80' width='100' height='10' fill='#ffd166'/><rect x='125' y='8' width='14' height='22' fill='#9fc0ff'/><circle cx='132' cy='8' r='7' fill='#fff' opacity='.7'/><text x='150' y='76' text-anchor='middle' font-size='12' font-weight='700' fill='#0A2A66'>${x}</text><text x='24' y='44' fill='#fff' font-size='11'>N₂ + H₂ masuk</text><text x='196' y='74' fill='#fff' font-size='11'>NH₃ keluar</text>`;
+if(t=='o')b=`<path d='M0 70 Q40 50 80 70 T160 70 T240 70 T320 70 V130 H0Z' fill='#2f7be0'/><path d='M0 98 Q40 78 80 98 T160 98 T240 98 T320 98 V130 H0Z' fill='#1b5fd8'/><text x='40' y='122' font-size='26'>🐠</text><text x='140' y='116' font-size='22'>🪸</text><text x='240' y='46' font-size='34'>🏭</text><text x='180' y='30' font-size='20' fill='#fff'>CO₂ ☁️</text>`;
+if(t=='t')b=`<rect x='135' y='14' width='50' height='102' rx='14' fill='#e8f1ff'/><rect x='141' y='${x=='hot'?40:62}' width='38' height='70' rx='10' fill='${x=='hot'?'#a0522d':'#e0c9b3'}'/><text x='210' y='80' font-size='42'>${x=='hot'?'🔥':'🧊'}</text><text x='24' y='70' fill='#fff' font-size='12'>Tabung gas</text><text x='24' y='86' fill='#fff' font-size='12'>${x=='hot'?'dipanaskan':'di air es'}</text>`;
+if(t=='p')b=`<rect x='70' y='48' width='150' height='40' rx='8' fill='#e8f1ff'/><rect x='76' y='54' width='84' height='28' rx='5' fill='#ffd9a8'/><rect x='160' y='51' width='8' height='34' fill='#1b5fd8'/><rect x='168' y='64' width='60' height='6' fill='#9fc0ff'/><rect x='226' y='54' width='10' height='26' rx='3' fill='#1b5fd8'/><text x='244' y='60' font-size='28'>👈</text><text x='24' y='112' fill='#fff' font-size='12'>${x}</text>`;
+if(t=='b')b=`<rect x='20' y='10' width='280' height='110' rx='10' fill='#e8f1ff'/>${x.map((l,i)=>`<text x='34' y='${38+i*26}' font-size='15' font-weight='700' fill='#0A2A66'>${l}</text>`).join('')}<text x='262' y='108' font-size='26'>✏️</text>`;
+return `<svg viewBox='0 0 320 130' style='display:block;width:100%' role='img' aria-label='Ilustrasi situasi misi'><rect width='320' height='130' fill='#0A2A66'/>${b}</svg>`}
+let gi,lives,score,streak,gt,gl;
+function gStart(){gi=0;lives=3;score=0;streak=0;$('gs').textContent='↻ Mulai ulang';gShow()}
+function gShow(){const r=GR[gi];clearInterval(gt);gl=100;
+$('gm').innerHTML=`<div class='hud'><span>Level ${r.lv}: ${LV[r.lv-1]}</span><span>Misi ${gi+1}/${GR.length}</span><span>${'❤'.repeat(lives)}</span><span>⭐ ${score}</span><span>🔥 Beruntun ${streak}</span></div><div class='tm' style='margin:10px 0'><i id='tb'></i></div><div style='border-radius:14px;overflow:hidden'>${scn(r.sc)}</div><div class='card'><b>${r.c}</b><br>${r.s}</div><p style='margin:4px 0'><b>Ke mana kesetimbangan bergeser?</b></p>${OPT.map((o,j)=>`<button class='go' onclick='gA(${j})'>${o}</button>`).join('')}<div id='gf'></div>`;
+if(!$('nt').checked)gt=setInterval(()=>{if(!$('game').classList.contains('on'))return;gl-=.5;$('tb').style.width=Math.max(gl,0)+'%';if(gl<=0){clearInterval(gt);gA(-1)}},100)}
+function gA(j){clearInterval(gt);const r=GR[gi],ok=j==r.a;
+document.querySelectorAll('#gm .go').forEach((b,k)=>{b.disabled=true;if(k==r.a)b.classList.add('ok');else if(k==j)b.classList.add('no')});
+let h;if(ok){streak++;const p=10+(document.getElementById('nt').checked?3:Math.round(gl/20))+(streak>=3?3:0);score+=p;h=`<span style='font-size:30px'>👍</span> ${OK[Math.floor(Math.random()*3)]} <b>+${p} poin</b><br>${r.e}`}
+else{streak=0;lives--;h=`${j<0?'Waktu habis! ':''}${NO[Math.floor(Math.random()*3)]}<br><b>Pembahasan:</b> ${r.e}`}
+const last=gi==GR.length-1||lives==0;
+$('gf').innerHTML=`<div class='fb pop ${ok?'ok':'no'}'>${h}</div><button class='btn' style='margin-top:10px' onclick='${last?'gEnd()':'gN()'}'>${last?'Lihat hasil':'Misi berikutnya ▶'}</button>`;
+$('gf').scrollIntoView({behavior:'smooth',block:'nearest'})}
+function gN(){gi++;gShow()}
+function gEnd(){const win=lives>0,b=win?(score>=150?['🏆','Master Kesetimbangan']:['🥇','Insinyur Kimia']):['🌱','Teknisi Magang'];
+$('gm').innerHTML=`<div class='card w pop' style='text-align:center'><div style='font-size:56px'>${b[0]}</div><h3>${win?'Misi selesai!':'Nyawa habis, tetapi kamu sudah berusaha!'}</h3><p>Gelar: <b>${b[1]}</b><br>Skor: <b>${score}</b> · Level tercapai: ${LV[GR[gi].lv-1]}</p><p>${win?'Kamu memahami cara sistem setimbang melawan gangguan. Lanjutkan ke Latihan Soal!':'Baca kembali Materi 3 dan 4, coba lagi, dan kamu pasti bisa naik level. 💪'}</p><button class='btn' onclick='gStart()'>↻ Main lagi</button> <button class='btn o' onclick="go('latihan')">Ke Latihan Soal ▶</button></div>`}
+$('gs').onclick=gStart;
+</script></body></html>
